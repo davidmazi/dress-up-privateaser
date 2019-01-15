@@ -1,37 +1,66 @@
 /* global PRIVATEASER*/
 'use strict';
 
+console.log("debut");
+var numberOfPersonsSelect = document.getElementById("numberOfPersons");
+for (var i = 1; i <= 100; i++) {
+    var ithElement = document.createElement("option");
+    ithElement.text = i;
+    numberOfPersonsSelect.add(ithElement);
+}
+
 (() => {
-  const render = (actors) => {
-    const fragment = document.createDocumentFragment();
-    const div = document.createElement('div');
-    const template = actors.map(actor => {
-      return `
+    const render = (actors) => {
+        const fragment = document.createDocumentFragment();
+        const div = document.createElement('div');
+        const template = actors.map(actor => {
+            return `
         <div class="actor">
           <span>${actor.who}</span>
           <span>${actor.type}</span>
           <span>${actor.amount}</span>
         </div>
       `;
-    }).join('');
+        }).join('');
 
-    div.innerHTML = template;
-    fragment.appendChild(div);
-    document.querySelector('#actors').innerHTML = '';
-    document.querySelector('#actors').appendChild(fragment);
-  };
+        div.innerHTML = template;
+        fragment.appendChild(div);
+        document.getElementById("actors").innerHTML = '';
+        document.getElementById("actors").appendChild(fragment);
+    };
 
-  const button = document.querySelector('#compute');
+    const button = document.getElementById("compute");
 
-  button.addEventListener('click', function onClick () {
-    const bar = PRIVATEASER.getBar();
-    const time = document.querySelector('.js-time').value;
-    const persons = document.querySelector('.js-persons').value;
-    const option = document.querySelector('.js-option').checked;
-    const actors = PRIVATEASER.payActors(bar, time, persons, option);
+    button.addEventListener('click', function onClick() {
+        event.preventDefault();
 
-    render(actors);
+        const bar = PRIVATEASER.getBar();
+        const time = document.querySelector('#duration').value;
+        const persons = document.querySelector('#numberOfPersons').value;
+        const option = document.querySelector('#deductible').checked;
+        const actors = PRIVATEASER.payActors(bar, time, persons, option);
 
-    return;
-  });
+        render(actors);
+        return;
+    });
+
+    var barelement = document.getElementById("bardiv")
+    var bookerelement = document.getElementById("bookerdiv")
+
+    const radiobar = document.getElementById("radiobar");
+
+    radiobar.addEventListener('click', function onClick() {
+        barelement.style.display = "block";
+        bookerelement.style.display = "none";
+    });
+
+    const radiobooker = document.getElementById("radiobooker");
+
+    radiobooker.addEventListener('click', function onClick() {
+        barelement.style.display = "none";
+        bookerelement.style.display = "block";
+    });
+
 })();
+
+console.log("fin");

@@ -15,9 +15,10 @@ const PRIVATEASER = (() => {
    */
   const getBar = () => {
     return {
-      'name': document.querySelector('#bar .js-name').value,
-      'pricePerHour': document.querySelector('#bar .js-price-by-hour').value,
-      'pricePerPerson': document.querySelector('#bar .js-price-by-person').value
+        //'name': document.getElementById("barname").value,
+        'name': "bob",
+        'pricePerHour': document.getElementById("pricePerHour").value,
+      'pricePerPerson': document.getElementById("pricePerPerson").value
     };
   };
 
@@ -113,7 +114,7 @@ const PRIVATEASER = (() => {
       'type': 'credit',
       'amount': commission.privateaser + deductibleOption
     }];
-
+    console.log("nice")
     return actors;
   };
 
