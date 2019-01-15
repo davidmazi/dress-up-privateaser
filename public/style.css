@@ -1,0 +1,23 @@
+* {
+    font-family: 'Open Sans',serif;
+}
+
+.title {
+    color: darkcyan;
+    font-size: xx-large;
+    margin: 25px auto;
+}
+
+.checkboxtext {
+    font-size: small;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.table {
+    margin: 10px auto;
+}
+
+tr:nth-child(odd) {
+    background-color: cadetblue;
+}

@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CSS/HTML Workshop with Privateaser</title>
-  </head>
-  <body>
-    <div id="bar">
-      <input class="js-name" type="text" placeholder="Bar name"/>
-      <input class="js-price-by-hour" type="number" placeholder="Price by hour"/>
-      <input class="js-price-by-person" type="number" placeholder="Price by person"/>
-    </div>
-    <div id="booker">
-      <input class="js-name" type="text" placeholder="Booker name"/>
-      <input class="js-time" type="number" placeholder="Time in h"/>
-      <input class="js-persons" type="number" placeholder="Persons"/>
-      <input class="js-option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<center>
+    <div class="title">Bar Reservation</div>
+    <img src="logo.png" alt="Privateaser logo" width="100">
+    <table class="table">
+        <tr>
+            <th>
+                <div id="bar">
+                    <input class="js-name" type="text" placeholder="Bar name"/>
+                    <input class="js-price-by-hour" type="number" placeholder="Price by hour"/>
+                    <input class="js-price-by-person" type="number" placeholder="Price by person"/>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div id="booker">
+                    <input class="js-name" type="text" placeholder="Booker name"/>
+                    <input class="js-time" type="number" placeholder="Time in h"/>
+                    <input class="js-persons" type="number" placeholder="Persons"/>
+                    <label for="deductiblecheckbox" class="checkboxtext">Deductible Option (1€ per person)</label>
+                    <input id="deductiblecheckbox" class="js-option" type="checkbox" placeholder="Deductible option"/>
+                </div>
+            </th>
+        </tr>
+    </table>
+        <button id="compute">Compute</button>
+        <div id="actors"></div>
     <script src="privateaser.js"></script>
     <script src="index.js"></script>
-  </body>
+</center>
+</body>
 </html>
